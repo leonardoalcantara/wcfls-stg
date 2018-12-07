@@ -49,7 +49,7 @@ def index():
 			no_stop_words_count.items(),
 			key=operator.itemgetter(1),
 			reverse=True
-		)
+		)[:10]
 		try:
 			result = Result(
 				url=url,
