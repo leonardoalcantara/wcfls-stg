@@ -57,8 +57,9 @@ def index():
 				result_no_stop_words=no_stop_words_count
 			)
 			db.session.add(result)
-			de.session.commit()
-		except:
+			db.session.commit()
+		except	Exception as ex:
+			print(ex)
 			errors.append("Unable to add item to db")
 	return render_template('index.html', errors=errors, results=results)
 
